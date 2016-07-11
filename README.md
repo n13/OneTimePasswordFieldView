@@ -9,6 +9,6 @@ UIView subclass with xib, based on NSLayoutConstraints that manages UITextField 
 
 ## Installation
 
-let passField = OneTimePasswordTextField.fromNib() // Create from Nib
-passField.maxWidth = screenSize.width              // MaxWidth of field
-view.addSubview(passField)                         // Add to superview
+> let passField = OneTimePasswordTextField.fromNib() // Create from Nib
+> passField.maxWidth = screenSize.width              // MaxWidth of field
+> view.addSubview(passField)                         // Add to superview
