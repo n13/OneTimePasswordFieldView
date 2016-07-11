@@ -1,9 +1,8 @@
 //
 //  OneTimePasswordTextField.swift
-//  delta
 //
 //  Created by Givi on 07/07/16.
-//  Copyright © 2016 Grow App. All rights reserved.
+//  Copyright © 2016 givip. All rights reserved.
 //
 
 import UIKit
