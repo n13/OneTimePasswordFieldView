@@ -9,17 +9,7 @@ import UIKit
 
 class OneTimePasswordTextField: UIView {
 
-    var maxWidth: CGFloat! {
-        didSet {
-            numberWidth = (maxWidth - 20 - 20) / 6
-        }
-    }
-    var numberWidth: CGFloat = 44 {
-        didSet {
-            cstrUnderLineMarkWidth.constant = numberWidth
-            layoutIfNeeded()
-        }
-    }
+    var numberWidth: CGFloat = 44
     
     @IBOutlet private weak var cstrUnderLineMarkWidth: NSLayoutConstraint!
     @IBOutlet private weak var cstrUnderLineMarkLeading: NSLayoutConstraint!
@@ -50,6 +40,18 @@ class OneTimePasswordTextField: UIView {
         lblNumber4.text = ""
         lblNumber5.text = ""
         lblNumber6.text = ""
+    }
+    
+    // figure out width of view, adjust number widths
+    override func layoutSubviews() {
+        numberWidth = (self.bounds.width - 20 - 20) / 6
+        cstrUnderLineMarkWidth.constant = numberWidth
+        super.layoutSubviews()
+    }
+
+    // mainly to return minimum height to display numbers
+    override func intrinsicContentSize() -> CGSize {
+        return CGSize(width: 100, height: 114)
     }
     
     private func underlinePosition(range: NSRange) {
